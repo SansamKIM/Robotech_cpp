@@ -67,7 +67,7 @@ void monster_c::attack_special(player target_player) {
 
 int main() {
   list<monster*> mon_list;
-
+/*
   monster_a first_monster;
   mon_list.push_back(&first_monster);
 
@@ -76,7 +76,7 @@ int main() {
 
   monster_c third_monster;
   mon_list.push_back(&third_monster);
-
+*/
   for (auto item : mon_list) {
     item->attack_at_dawn();
   }
