@@ -3,25 +3,28 @@
 using namespace std;
 
 template <typename T = int>
-class data_package {
+class data_package
+{
 public:
-  data_package(T first) : first(first) {}
-  template <typename C>
-  friend void printout_friend_element(C& data_object);  // ÇÁ·»µå ÇÔ¼ö ¼±¾ð
+    data_package(T first) : first(first) {}
+    template <typename C>
+    friend void printout_friend_element(C &data_object); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ ï¿½ï¿½ï¿½ï¿½
 private:
-  T first;
+    T first;
 };
 
 template <typename C>
-void printout_friend_element(C& data_object) {    // ÇÁ·»µå ÇÔ¼ö Á¤ÀÇ
-  cout << "(friend ÇÔ¼ö ÅÛÇÃ¸´ È£Ãâ)  ÅÛÇÃ¸´ Çü½Ä ¸Å°³ º¯¼ö °ª : "
-    << data_object.first << endl;
+void printout_friend_element(C &data_object)
+{ // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ ï¿½ï¿½ï¿½ï¿½
+    cout << "(friend ï¿½Ô¼ï¿½ ï¿½ï¿½ï¿½Ã¸ï¿½ È£ï¿½ï¿½)  ï¿½ï¿½ï¿½Ã¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Å°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ : "
+         << data_object.first << endl;
 }
 
-int main() {
-  data_package<> template_inst1(5);
-  data_package<string> template_inst2("Å¬·¡½º ÅÛÇÃ¸´ ±âº»°ª");
+int main()
+{
+    data_package<> template_inst1(5);
+    data_package<string> template_inst2("Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ã¸ï¿½ ï¿½âº»ï¿½ï¿½");
 
-  printout_friend_element(template_inst1);
-  printout_friend_element(template_inst2);
+    printout_friend_element(template_inst1);
+    printout_friend_element(template_inst2);
 }

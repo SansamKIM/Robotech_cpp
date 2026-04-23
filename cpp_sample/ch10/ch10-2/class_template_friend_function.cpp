@@ -3,23 +3,26 @@
 using namespace std;
 
 template <typename T = int>
-class data_package {
+class data_package
+{
 public:
-  data_package(T first) : first(first) {}
+    data_package(T first) : first(first) {}
 
-  friend void printout_friend_element(data_package<T>& data_object) {
-    cout << "(friend ÇÔ¼ö) ÅÛÇÃ¸´ ¸Å°³º¯¼ö °ª : " 
-      << data_object.first << endl;
-  }
+    friend void printout_friend_element(data_package<T> &data_object)
+    {
+        cout << "(friend ï¿½Ô¼ï¿½) ï¿½ï¿½ï¿½Ã¸ï¿½ ï¿½Å°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ : "
+             << data_object.first << endl;
+    }
 
 private:
-  T first;
+    T first;
 };
 
-int main() {
-  data_package<> template_inst1(5);
-  data_package<string> template_inst2("Å¬·¡½º ÅÛÇÃ¸´ ±âº»°ª");
+int main()
+{
+    data_package<> template_inst1(5);
+    data_package<string> template_inst2("Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ã¸ï¿½ ï¿½âº»ï¿½ï¿½");
 
-  printout_friend_element(template_inst1);
-  printout_friend_element(template_inst2);
+    printout_friend_element(template_inst1);
+    printout_friend_element(template_inst2);
 }
